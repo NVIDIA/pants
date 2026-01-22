@@ -22,27 +22,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Add upstream and fetch
-        run: |
-          git remote add upstream https://github.com/pantsbuild/pants.git || true
-          git fetch upstream
+      - name: GitHub sync main_clean
+        run: gh repo sync NVIDIA/pants --branch main_clean
 
-      - name: Merge upstream/main into main_clean
-        run: |
-          git checkout main_clean
-          # Try fast-forward first; if not possible, do a regular merge (may fail on conflicts)
-          git merge --ff-only upstream/main
-
-      - name: Push to origin/main_clean
-        run: git push origin main_clean
-
-      - name: Rebase upstream/main into main
-        run: |
-          git checkout main
-          git rebase upstream/main
-          git pull --rebase
-
-      - name: push to origin/main
-        run: |
-          git push origin main
-          git push --tags origin main
+      - name: GitHub sync main
+        run: gh repo sync NVIDA/pants --branch main
