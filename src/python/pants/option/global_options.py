@@ -23,6 +23,7 @@ from pants.option.option_types import (
     FloatOption,
     IntOption,
     StrListOption,
+    StrOption,
     collect_options_info,
 )
 from pants.option.option_value_container import OptionValueContainer
@@ -272,6 +273,22 @@ class GlobalOptions(BootstrapOptions, Subsystem):
             """
         ),
         default=[],
+    )
+    remote_environment_override = StrOption(
+        default=None,
+        help=softwrap(
+            """
+            Override the environment name for all remote execution targets.
+            When set, all environment name resolutions that would normally use
+            a target's environment field or a goal's hardcoded environment will
+            use this value instead. This allows switching between remote backends
+            from the CLI without editing BUILD files or plugin code.
+
+            The value must be a name defined in `[environments-preview].names`.
+
+            Example: `--remote-environment-override=bg_remote_env`
+            """
+        ),
     )
 
     @staticmethod
