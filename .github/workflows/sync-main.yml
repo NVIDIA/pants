@@ -1,0 +1,32 @@
+# Sync upstream/main into your fork's main branch on a schedule or manually.
+# Requires: your fork's workflow must be allowed to push to the branch (GITHUB_TOKEN can push if branch protection allows).
+name: Sync upstream -> main (direct)
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'    # every 6 hours, adjust as needed
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: GitHub sync main_clean
+        run: gh repo sync NVIDIA/pants --branch main_clean
+
+      - name: GitHub sync main
+        run: gh repo sync NVIDIA/pants --branch main
