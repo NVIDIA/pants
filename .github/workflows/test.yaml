@@ -168,13 +168,15 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         version: 23.x
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - env:
         HONEYCOMB_API_KEY: ${{ secrets.HONEYCOMB_API_KEY || '--DISABLED--' }}
@@ -424,13 +426,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -529,13 +533,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -634,13 +640,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -739,13 +747,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -844,13 +854,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -949,13 +961,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -1054,13 +1068,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -1159,13 +1175,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -1264,13 +1282,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
@@ -1369,13 +1389,15 @@ jobs:
       with:
         distribution: adopt
         java-version: '11'
-    - name: Install Go
+    - name: Install Go 1.25.3
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.25.3
-    - name: Install Go
+    - name: Install Go 1.24.9
       uses: actions/setup-go@v6
       with:
+        cache: false
         go-version: 1.24.9
     - if: runner.os == 'Linux'
       name: Download Apache `thrift` binary (Linux)
