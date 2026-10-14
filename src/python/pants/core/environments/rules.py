@@ -444,6 +444,19 @@ async def resolve_environment_name(
     environments_subsystem: EnvironmentsSubsystem,
     global_options: GlobalOptions,
 ) -> EnvironmentName:
+    override = global_options.remote_environment_override
+    if override is not None and request.raw_value not in (
+        LOCAL_ENVIRONMENT_MATCHER,
+        LOCAL_WORKSPACE_ENVIRONMENT_MATCHER,
+    ):
+        request = EnvironmentNameRequest(
+            raw_value=override,
+            description_of_origin=(
+                f"{request.description_of_origin} "
+                f"(overridden by --remote-environment-override={override})"
+            ),
+        )
+
     if request.raw_value == LOCAL_ENVIRONMENT_MATCHER:
         local_env_name = await determine_local_environment(**implicitly())
         return local_env_name.val
